@@ -1,0 +1,13 @@
+{
+    "name"        : "nodechecker-crawler"
+  , "version"     : "0.0.1"
+  , "homepage"    : "http://nodechecker.com"
+  , "description" : "Nodechecker NPM crawler"
+  , "dependencies": {
+      "JSONStream"           : "*"
+      , "redis"              : "*"
+      , "request"              : "*"
+      , "dnode"              : "*"
+    }
+  , "main"    : "./main.js"
+}
