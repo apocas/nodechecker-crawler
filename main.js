@@ -6,4 +6,6 @@ var balancer_ip = process.env.BALANCER_HOST || '127.0.0.1';
 var balancer_port = process.env.BALANCER_PORT || 5000;
 
 var npmt = new Npmt(mongo_ip, mongo_port, balancer_ip, balancer_port);
-npmt.run();
+npmt.on('ready', function() {
+  npmt.run();
+});

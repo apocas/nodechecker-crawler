@@ -7,8 +7,6 @@
       "JSONStream"           : "*"
       , "mongodb"              : "*"
       , "request"              : "*"
-      , "duplex-emitter"              : "*"
-      , "reconnect"              : "*"
       , "colors"              : "*"
     }
   , "main"    : "./main.js"
