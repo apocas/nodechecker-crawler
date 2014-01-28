@@ -1,13 +1,17 @@
 {
-    "name"        : "nodechecker-crawler"
-  , "version"     : "0.0.1"
-  , "homepage"    : "http://nodechecker.com"
-  , "description" : "Nodechecker NPM crawler"
-  , "dependencies": {
-      "JSONStream"           : "*"
-      , "mongodb"              : "*"
-      , "request"              : "*"
-      , "colors"              : "*"
-    }
-  , "main"    : "./main.js"
+  "name": "nodechecker-crawler",
+  "version": "0.0.1",
+  "homepage": "http://nodechecker.com",
+  "description": "Nodechecker NPM crawler",
+  "scripts": {
+    "dev": "export MONGODB_HOST=127.0.0.1; node main.js;"
+  },
+  "dependencies": {
+    "JSONStream": "*",
+    "mongodb": "*",
+    "request": "*",
+    "colors": "*",
+    "mongojs": "~0.10.0"
+  },
+  "main": "./main.js"
 }
