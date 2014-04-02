@@ -11,7 +11,8 @@
     "mongodb": "*",
     "request": "*",
     "colors": "*",
-    "mongojs": "~0.10.0"
+    "mongojs": "~0.10.0",
+    "npm": "npm"
   },
   "main": "./main.js"
 }
