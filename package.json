@@ -12,7 +12,8 @@
     "request": "*",
     "colors": "*",
     "mongojs": "*",
-    "npm": "*"
+    "npm": "*",
+    "async": "*"
   },
   "main": "./main.js"
 }
