@@ -6,10 +6,6 @@ var balancer_ip = process.env.BALANCER_HOST || '127.0.0.1';
 var balancer_port = process.env.BALANCER_PORT || 5000;
 
 
-function roundToMB (bytes) {
-  return (Math.round((bytes / 1024.0 / 1024) * 1000) / 1000) + 'MB';
-}
-
 function formatTime (nanoseconds) {
   var seconds = nanoseconds / 1000000000;
   var h = Math.floor(seconds / 3600);
@@ -23,28 +19,8 @@ function formatTime (nanoseconds) {
 }
 
 
-function getMemory () {
-  function print () {
-    var memory = process.memoryUsage();
-
-    console.log('Memory - rss: ' + roundToMB(memory.rss) + 
-    ' heapTotal: ' + roundToMB(memory.heapTotal) + 
-    ' heapUsed: ' + roundToMB(memory.heapUsed) + '\n');
-  }
-
-  print();
-
-  setTimeout(function () {
-    getMemory();
-  }, 15000);
-}
-
 // get times
 var start = process.hrtime();
-var end = 0;
-
-// print memory usage
-getMemory();
 
 // start crawler
 var npmt = new Npmt(mongo_ip, mongo_port, balancer_ip, balancer_port);
@@ -54,6 +30,6 @@ npmt.on('ready', function() {
 
 
 process.on('exit', function(code) {
-  end = process.hrtime(start);
+  var end = process.hrtime(start);
   console.log('Time - ' + formatTime(end[0] * 1e9 + end[1]));
 });
